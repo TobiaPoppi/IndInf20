@@ -1,6 +1,11 @@
-# Industrial informatics LT - Mantova - 2020/21
-This is official repository of the course Industrial Informatics LT, Year 2019/20, at University of Modena and Reggio Emilia, held at Fondazione Universitaria di Mantova
+<a href="https://hipert.unimore.it/" target="_blank">
+<img alt="Qries" src="https://hipert.unimore.it/people/paolob/pub/HipertLab_01_oriz_rgb_positivo.png" width=150" height="70">
+</a>
 
+# Industrial informatics LT - Mantova - 2020/21
+<p>
+This is official repository of the course Industrial Informatics LT, Year 2020/21, at University of Modena and Reggio Emilia, held at Fondazione Universitaria di Mantova
+</p>
 <a href="http://hipert.unimore.it/people/paolob/pub/Industrial_Informatics/index.html" target="_blank">Course page</a>
 
 <a href="FAQ.md" target="_blank">FAQ</a>
