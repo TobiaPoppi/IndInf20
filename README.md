@@ -1,5 +1,5 @@
 <a href="https://hipert.unimore.it/" target="_blank">
-<img alt="HiPeRT logo" src="https://hipert.unimore.it/people/paolob/pub/HipertLab_01_oriz_rgb_positivo.png" width=150" height="70">
+<img alt="HiPeRT logo" src="https://hipert.unimore.it/people/paolob/pub/HipertLab_01_oriz_rgb_positivo.png" width=200">
 </a>
 
 # Industrial informatics LT - Mantova - 2020/21
