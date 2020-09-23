@@ -15,11 +15,11 @@ using namespace std;
 // -l'elemento con indice 3 (ovvvero 'c') rappresenta l'input che deve riceve lo stato 1 per passare allo stato 3, quindi 'c'.
 
 
- 													// S0, S1, S2, S3}
+ 						     // S0, S1, S2, S3}
 const std::vector< std::vector<char> > statesMatrix={{ '0','b','a','c'},//<---stato 0
-													 { '0','b','0','c'},//<---stato 1
-													 { 'a','0','0','0'},//<---stato 2
-													 { '0','0','0','0'}};//<---stato 3;
+						     { '0','b','0','c'},//<---stato 1
+						     { 'a','0','0','0'},//<---stato 2
+						     { '0','0','0','0'}};//<---stato 3;
 
 
 
