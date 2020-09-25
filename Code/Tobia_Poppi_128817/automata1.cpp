@@ -2,77 +2,43 @@
 
 using namespace std;
 
+//MACCHINA A STATI. IL PROGRAMMA PREVEDE COME INGRESSI IN ARGOMENTO LE LETTERE MINUSCOLE
+//SCRITTE CON SPAZI CHE LE DIVIDONO.
+
 const int inputs_size = 2;
-const char inputs[] = {'b', 'c'};
-//const int inputs_size = 4;
-//const char inputs[] = {'a', 'a', 'b', 'c'};
+const int schema[][4] = {{2, 1, 3, -1},{-1, 1, 3, -1},{0, -1, -1, -1},{-1, -1, -1, -1}};
+const char inputs[] = {'a', 'a', 'b', 'c'};
 
-char next()
+int controllo_successivo(int statoattuale, int in){
+	return schema[statoattuale][in];
+	}
+
+int main(int argc, char **argv)
 {
-	static int i = 0;
-	cout << i << endl;
-	cout << inputs[i] << endl;
-	return inputs[i++];
-}
-
-int controllo_successivo(int statoattuale, char in){
-	switch(statoattuale){
-			case 0:
-				if (in == 'a'){
-					return 2;
-					}
-				else if (in == 'b'){
-					return 1;
-					}
-				else if (in == 'c'){
-					return 3;
-					}
-				else {
-					return -2;
-					}
-			case 1:
-				if (in == 'b'){
-					return 1;
-					}
-				else if (in == 'c'){
-					return 3;
-					}
-				else {
-					return -2;
-					}
-			case 2:
-				if (in == 'a'){
-					return 0;
-					}
-				else {
-					return -2;
-					}
-			case 3:
-				return -2;
+	if (argc > 1){
+		int stato = 0;
+		int i = 0;
+		while(true){
+			int argcurr = (int) argv[i+1][0];
+			int numero_lettera = argcurr - 97;
+			i++;
+			stato = controllo_successivo(stato, numero_lettera);
+			if (stato < 0){
+				goto error;
+				break;
+				}
+			else if (stato == 3){
+				cout << "Input is legal :)" << endl;
+				return 0;
+				}
 		}
-	return 0;	
+		return 0;
+		error:
+			cout << "Error!!" << endl;
+			cout << "Input not legal!" << endl;
+			return -1;
 	}
-
-int main()
-{
-	int stato = 0;
-	while(true){
-		char a = next();
-		cout << a << endl;
-		stato = controllo_successivo(stato, a);
-		if (stato < 0){
-			goto error;
-			break;
-			}
-		else if (stato == 3){
-			cout << "Input is legal :)" << endl;
-			return 0;
-			}
-		
+	else{
+		return -1;
 	}
-	return 0;
-	error:	
-		cout << "Error!!" << endl;
-		cout << "Input not legal!" << endl;
-		return -1; 
 }
