@@ -5,9 +5,7 @@ using namespace std;
 //MACCHINA A STATI. IL PROGRAMMA PREVEDE COME INGRESSI IN ARGOMENTO LE LETTERE MINUSCOLE
 //SCRITTE CON SPAZI CHE LE DIVIDONO.
 
-const int inputs_size = 2;
 const int schema[][4] = {{2, 1, 3, -1},{-1, 1, 3, -1},{0, -1, -1, -1},{-1, -1, -1, -1}};
-const char inputs[] = {'a', 'a', 'b', 'c'};
 
 int controllo_successivo(int statoattuale, int in){
 	return schema[statoattuale][in];
