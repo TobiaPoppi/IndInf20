@@ -1,4 +1,7 @@
-#define NO_PI 5
+//INFINITE CYCLE OF BLINKING LED, WITH 1 SEC DELAY BETWEEN ON AND OFF
+//
+//
+//#define NO_PI 5
 
 #include <iostream>
 
@@ -11,6 +14,7 @@ using namespace std;
 /// CONFIGURATION
 
 const int led_Blue = 0;
+int timeoutMs = 1000;
 
 ///
 /// UTILS
@@ -36,7 +40,7 @@ int main(){
     while(1){
       setLed(led_Blue, onoff);
 
-      //delay(timeoutMs);
+      delay(timeoutMs);
       onoff = !onoff;
     }
     return 0;
