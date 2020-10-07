@@ -21,9 +21,9 @@ void init(){
 }
 
 void setLedOn(int ledNumber){
-    cout << "Setting led " << ledNumber << " to " << (value ? "ON" : "OFF") << endl;
+    cout << "Setting led " << ledNumber << " to ON " << endl;
     digitalWrite(ledNumber, true);
-    for (int i = 0; i < len(mfn); i++){
+    for (int i = 0; i < (int) sizeof(mfn); i++){
       if (ledNumber != mfn[i]){
         digitalWrite(mfn[i], false);
       }
@@ -45,10 +45,10 @@ int main(){
     }
     else if (state == 3){
       char k;
-      setLedOn(3, true);
+      setLedOn(3);
       cout << "Input is legal :)\nWrite X to exit" << endl;
       cin >> k;
-      while (k != x'){
+      while (k != 'x'){
         cout << "that's not an option... :/" << endl;
         cin >> k;
       }
@@ -57,7 +57,7 @@ int main(){
   }
   error:
     char k;
-    setLedOn(1, true);
+    setLedOn(1);
     cout << "Error!!" << endl;
     cout << "Input not legal!\nWrite X to exit" << endl;
     cin >> k;
