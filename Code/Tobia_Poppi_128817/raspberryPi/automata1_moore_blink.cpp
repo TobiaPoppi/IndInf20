@@ -20,31 +20,32 @@ void init(){
   pinMode(green_led, OUTPUT);
 }
 
-void setOneLed(int ledNumber, bool value, int ledPrec){
+void setLedOn(int ledNumber){
     cout << "Setting led " << ledNumber << " to " << (value ? "ON" : "OFF") << endl;
-    digitalWrite(ledPrec, !value);
-    digitalWrite(ledNumber, value);
+    digitalWrite(ledNumber, true);
+    for (int i = 0; i < len(mfn); i++){
+      if (ledNumber != mfn[i]){
+        digitalWrite(mfn[i], false);
+      }
+    }
 }
 
 int main(){
   init();
   int state = 0;
-  int state_prec = 0;
   char letter;
   while (state < 3){
-    setOneLed(mfn[state], true, mfn[state_prec]);
+    setLedOn(mfn[state]);
     cout << "Insert the symbol: " << endl;
     cin >> letter;
     int in = letter - 'a';
-    state_prec = state;
     state = sfn[state][in];
     if (state < 0){
       goto error;
     }
     else if (state == 3){
       char k;
-      digitalWrite(mfn[state_prec], false);
-      digitalWrite(3, true);
+      setLedOn(3, true);
       cout << "Input is legal :)\nWrite X to exit" << endl;
       cin >> k;
       while (k != x'){
@@ -56,8 +57,7 @@ int main(){
   }
   error:
     char k;
-    digitalWrite(mfn[state_prec], false);
-    digitalWrite(1, true);
+    setLedOn(1, true);
     cout << "Error!!" << endl;
     cout << "Input not legal!\nWrite X to exit" << endl;
     cin >> k;
