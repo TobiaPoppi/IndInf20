@@ -48,6 +48,9 @@ int main(){
     cout << "Insert the symbol: " << endl;
     cin >> letter;
     int in = letter - 'a';
+    if ((in < 0) || (in > 2)){
+    	goto error;
+    }
     state = sfn[state][in];
     if (state < 0){
       goto error;
