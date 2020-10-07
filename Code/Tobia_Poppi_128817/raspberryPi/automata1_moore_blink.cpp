@@ -18,14 +18,22 @@ void init(){
   pinMode(red_led, OUTPUT);
   pinMode(yellow_led, OUTPUT);
   pinMode(green_led, OUTPUT);
+  clearLed();
+}
+
+void clearLed(){
+  digitalWrite(0, false);
+  digitalWrite(1, false);
+  digitalWrite(2, false);
+  digitalWrite(3, false);
 }
 
 void setLedOn(int ledNumber){
     cout << "Setting led " << ledNumber << " to ON " << endl;
     digitalWrite(ledNumber, true);
     for (int i = 0; i < (int) sizeof(mfn); i++){
-      if (ledNumber != mfn[i]){
-        digitalWrite(mfn[i], false);
+      if (ledNumber != i){
+        digitalWrite(i, false);
       }
     }
 }
@@ -52,6 +60,7 @@ int main(){
         cout << "that's not an option... :/" << endl;
         cin >> k;
       }
+      clearLed();
       return 0;
     }
   }
@@ -65,5 +74,6 @@ int main(){
       cout << "that's not an option... :/" << endl;
       cin >> k;
     }
+    clearLed();
     return -1;
 }
