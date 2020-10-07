@@ -31,7 +31,7 @@ int main(){
   int state = 0;
   int state_prec = 0;
   char letter;
-  while (stato < 3){
+  while (state < 3){
     setOneLed(mfn[state], true, mfn[state_prec]);
     cout << "Insert the symbol: " << endl;
     cin >> letter;
@@ -47,7 +47,7 @@ int main(){
       digitalWrite(3, true);
       cout << "Input is legal :)\nWrite X to exit" << endl;
       cin >> k;
-      while (k != "x"){
+      while (k != x'){
         cout << "that's not an option... :/" << endl;
         cin >> k;
       }
@@ -55,12 +55,13 @@ int main(){
     }
   }
   error:
+    char k;
     digitalWrite(mfn[state_prec], false);
     digitalWrite(1, true);
     cout << "Error!!" << endl;
     cout << "Input not legal!\nWrite X to exit" << endl;
     cin >> k;
-    while (k != "x"){
+    while (k != 'x'){
       cout << "that's not an option... :/" << endl;
       cin >> k;
     }
