@@ -9,7 +9,7 @@ const int yellow_led = 2; //GPIO 2
 const int green_led = 3; //GPIO 3
 
 const int sfn[][4] = {{2, 1, 3, -1},{-1, 1, 3, -1},{0, -1, -1, -1},{-1, -1, -1, -1}};
-const int mfn[][4] = {0, 2, 2, 3};
+const int mfn[4] = {0, 2, 2, 3};
 
 void init(){
   wiringPiSetup();
