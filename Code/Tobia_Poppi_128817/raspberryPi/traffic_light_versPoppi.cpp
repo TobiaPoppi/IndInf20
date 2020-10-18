@@ -85,13 +85,13 @@ void normalCycle()
     while(1){
         response = mfn1[currentState][count];
         if (response == 1){
-            currentState = states[currentState];
             resetLeds();
             for (int i = 0; i < sizeof(mfn2)/sizeof(mfn2[0]); i++){
                 if (mfn2[currentState][i] == 1){
                     setLed(pins[i], ON);
                 }
             }
+            currentState = states[currentState];
             count = 0;
         }
         else{
