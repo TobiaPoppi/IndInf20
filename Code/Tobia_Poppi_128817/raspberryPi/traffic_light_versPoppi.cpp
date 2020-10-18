@@ -37,7 +37,7 @@ int states[] = {2, // From state 0 I will go to 2
                 4}; // From state 4 I will go to 3
 const string coutMfn[] = {"Green red", "Green light", "Green/Yellow light"};
 
-unsigned int count = 1;
+unsigned int count = 0;
 
 const int mfn1[][6] = {
     {0, 0, 0, 0, 1 ,0},
@@ -45,9 +45,9 @@ const int mfn1[][6] = {
     {0, 0, 0, 0, 0 ,1}
 };
 const int mfn2[][3] = {
-    {0, 0, 1},
+    {1, 0, 0},
     {0, 1, 1},
-    {1, 0, 0}
+    {0, 0, 1}
 };
 
 void setLed(int ledNumber, bool action)
