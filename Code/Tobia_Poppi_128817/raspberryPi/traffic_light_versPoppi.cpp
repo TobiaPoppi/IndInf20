@@ -88,7 +88,7 @@ void normalCycle()
             currentState = states[currentState];
             resetLeds();
             for (int i = 0; i < sizeof(mfn2)/sizeof(mfn2[0]); i++){
-                if (mfn2[state][i] == 1){
+                if (mfn2[states][i] == 1){
                     setLed(pins[i], ON);
                 }
             }
