@@ -145,11 +145,11 @@ void startTimer()
 
     if(!errorState)
     {
-        normalCycle(count);
+        normalCycle();
     }
     else
     {
-        errorCycle(count);
+        errorCycle();
     }
 
 }
