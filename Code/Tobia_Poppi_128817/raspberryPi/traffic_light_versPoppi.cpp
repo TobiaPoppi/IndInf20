@@ -7,7 +7,7 @@ using namespace std;
 /// Configuration
 ///
 enum leds {
-    LED_RED = 1,
+    LED_RED = 0,
     LED_YELLOW,
     LED_GREEN
 };
@@ -86,12 +86,12 @@ void normalCycle()
         response = mfn1[currentState][count];
         if (response == 1){
             resetLeds();
+            currentState = states[currentState];
             for (int i = 0; i < sizeof(mfn2)/sizeof(mfn2[0]); i++){
                 if (mfn2[currentState][i] == 1){
                     setLed(pins[i], ON);
                 }
             }
-            currentState = states[currentState];
             count = 0;
         }
         else{
