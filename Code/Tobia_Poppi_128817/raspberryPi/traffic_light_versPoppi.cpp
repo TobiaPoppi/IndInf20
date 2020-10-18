@@ -39,7 +39,7 @@ const string coutMfn[] = {"Green red", "Green light", "Green/Yellow light"};
 
 unsigned int count = 1;
 
-const int mfn1[][3] = {
+const int mfn1[][] = {
     {0, 0, 0, 0, 1 ,0},
     {0, 0, 1, 0, 0 ,0},
     {0, 0, 0, 0, 0 ,1}
