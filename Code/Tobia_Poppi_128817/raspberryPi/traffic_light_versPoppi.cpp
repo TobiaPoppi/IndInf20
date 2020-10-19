@@ -7,7 +7,7 @@ using namespace std;
 /// Configuration
 ///
 enum leds {
-    LED_RED = 0,
+    LED_RED = 1,
     LED_YELLOW,
     LED_GREEN
 };
