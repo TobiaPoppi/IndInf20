@@ -40,6 +40,7 @@ const string coutMfn[] = {"Green red", "Green light", "Green/Yellow light"};
 
 unsigned int count = 0;
 
+delete[] check;
 //INITIALIZING DYNAMIC ALLOCATION OF ARRAYS BASING ON CONSTANTS PRE-DEFINED
 int n = sizeof(states)/sizeof(states[0]);
 int* check = new int[n];
