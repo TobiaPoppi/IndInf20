@@ -40,14 +40,7 @@ const string coutMfn[] = {"Green red", "Green light", "Green/Yellow light"};
 
 unsigned int count = 0;
 
-delete[] check;
 //INITIALIZING DYNAMIC ALLOCATION OF ARRAYS BASING ON CONSTANTS PRE-DEFINED
-int n = sizeof(states)/sizeof(states[0]);
-int* check = new int[n];
-
-for(int i = 0; i < n; ++i){
-    check[i] = timers[i];
-}
 
 const int mfn[][sizeof(states)/sizeof(states[0])] = {
     {LED_RED}, //state0
@@ -57,6 +50,15 @@ const int mfn[][sizeof(states)/sizeof(states[0])] = {
     {LED_YELLOW}, //state4
     {} //state5
 };
+
+void allocate_array(){
+    int n = sizeof(states)/sizeof(states[0]);
+    global int* check = new int[n];
+
+    for(int i = 0; i < n; ++i){
+        check[i] = timers[i];
+    }
+}
 
 void setLed(int ledNumber, bool action)
 {
@@ -82,6 +84,7 @@ void init()
         pinMode(pins[indexPins], OUTPUT);
     }
     resetLeds();
+    allocate_array();
 }
 
 void normalCycle()
